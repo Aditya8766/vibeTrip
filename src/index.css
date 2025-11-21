@@ -1,0 +1,57 @@
+/* Base CSS + VibeTrip color variables */
+:root {
+	/* VibeTrip palette (as requested) */
+	--vt-primary: #FFF2C6;   /* primary */
+	--vt-secondary: #FFF8DE; /* secondary */
+	--vt-warning: #AAC4F5;   /* warning/accent */
+	--vt-error: #8CA9FF;     /* error/strong accent */
+
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+	margin: 0;
+	/* subtle gradient using primary color */
+	background: linear-gradient(180deg, var(--vt-primary) 0%, #ffffff 30%);
+	color: rgba(33, 53, 71, 0.95);
+}
+
+/* Animations used by Hero and headings */
+@keyframes slideUp {
+	from { transform: translateY(12px); opacity: 0 }
+	to { transform: translateY(0); opacity: 1 }
+}
+@keyframes fadeIn {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+
+/* Sticky nav elevation when scrolling */
+.appbar-scrolled {
+	box-shadow: 0 6px 18px rgba(5,32,38,0.12) !important;
+}
+
+/* Decorative subtle floating image animation */
+@keyframes float {
+	0% { transform: translateY(0) }
+	50% { transform: translateY(-8px) }
+	100% { transform: translateY(0) }
+}
+
+.floating {
+	animation: float 4s ease-in-out infinite;
+}
+
+main { width: 100%; }
+
+h1 { font-size: 3.2em; line-height: 1.1; }
+
+button { border-radius: 8px; border: 1px solid transparent; padding: 0.6em 1.2em; font-size: 1em; font-weight: 500; font-family: inherit; cursor: pointer; transition: border-color 0.25s; }
+button:hover { border-color: var(--vt-warning); }
+
+@media (prefers-color-scheme: light) { body { background: #ffffff; } }
+
